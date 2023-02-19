@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/02/19/01.hello-world/</url>
+    <content><![CDATA[<h1 id="博客成立了！！！"><a href="#博客成立了！！！" class="headerlink" title="博客成立了！！！"></a>博客成立了！！！</h1>]]></content>
+  </entry>
+  <entry>
+    <title>向后端传递字符串多了引号</title>
+    <url>/2023/02/19/02.%E7%BB%99%E5%90%8E%E5%8F%B0%E4%BC%A0%E9%80%92%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%97%B6%E5%A4%9A%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BC%95%E5%8F%B7/</url>
+    <content><![CDATA[<p>给后台传递字符串时多了一个引号</p>
+<span id="more"></span>
+
+<p>字符串不是 JSON 格式的字符串，解析的时候不能被服务端解析成标准 JSON 格式<br>所以可以使用标准 JSON 解决或在 headers 里面指定负载格式<br>加上请求头：<br><code>&#39;Content-Type&#39;:&#39;text/plain&#39;</code></p>
+]]></content>
+      <categories>
+        <category>编程手册</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>前后端交互</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>找不到模块&#39;xxx&#39;的声明文件</title>
+    <url>/2023/02/19/03.%E6%89%BE%E4%B8%8D%E5%88%B0%E6%A8%A1%E5%9D%97&#39;XXX&#39;%E7%9A%84%E5%A3%B0%E6%98%8E%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>这种情况，在项目根目录或者 src 目录下新建一个 xxx.d.ts 的文件，并写下以下代码：</p>
+<span id="more"></span>
+
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">declare</span> <span class="variable language_">module</span> <span class="string">&#x27;*.vue&#x27;</span> &#123;</span><br><span class="line">    <span class="keyword">import</span> <span class="keyword">type</span> &#123; <span class="title class_">DefineComponent</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line">    <span class="comment">// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types</span></span><br><span class="line">    <span class="keyword">const</span> <span class="attr">component</span>: <span class="title class_">DefineComponent</span>&lt;&#123;&#125;, &#123;&#125;, <span class="built_in">any</span>&gt;;</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span> component;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程手册</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>TypeScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue中img标签动态渲染</title>
+    <url>/2023/02/19/04.vue%E4%B8%ADimg%E6%A0%87%E7%AD%BE%E5%8A%A8%E6%80%81%E6%B8%B2%E6%9F%93%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>当要渲染一个列表时，要用到 v-for 循环，但是里面的 img 标签也要进行动态渲染。</p>
+<span id="more"></span>
+
+<p>一般的引入图片不会渲染出来：<br><code>img: &#39;./img.png&#39;</code><br>需要用到 vite 中的静态资源引入:<br><code>img: newURL(&#39;./img.png&#39;, import.meta.url)</code><br>引入完成后，在 img 标签上引用时要这样写：<br><code> &lt;img :src=&quot;</code>${img}<code>&quot;/&gt;</code><br>如果是<code>&lt;img :src=&quot;img&quot;&gt;</code>的话会有 ts 警告</p>
+]]></content>
+      <categories>
+        <category>编程手册</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>Vite</tag>
+      </tags>
+  </entry>
+</search>
