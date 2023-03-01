@@ -53,4 +53,18 @@
         <tag>Vite</tag>
       </tags>
   </entry>
+  <entry>
+    <title>引入scss @import &quot;&quot; 和 @import url()</title>
+    <url>/2023/03/01/05.%E5%BC%95%E5%85%A5scss/</url>
+    <content><![CDATA[<p>在 vue 组件中引用 scss 文件时，用<code>@import url()</code>的方式引入，会导致在引入的 scss 文件中使用全局 scss 文件中的变量不生效。<br>所以我们应该将<code>@import url()</code>改为<code>@import &quot;&quot;</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;style lang=<span class="string">&quot;scss&quot;</span>&gt;</span><br><span class="line">@<span class="keyword">import</span> <span class="title function_">url</span>(<span class="string">&quot;xxx&quot;</span>) 会导致被引入的scss文件中scss变量不可用</span><br><span class="line">&#123;<span class="comment">/* 改为 */</span>&#125;</span><br><span class="line">@<span class="keyword">import</span> <span class="string">&quot;xxx&quot;</span></span><br><span class="line">&lt;style&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>编程手册</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>Scss</tag>
+      </tags>
+  </entry>
 </search>
